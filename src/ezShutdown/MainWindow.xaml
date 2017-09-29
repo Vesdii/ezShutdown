@@ -5,8 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ezShutdown"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="EZS" Height="110" Width="210" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
-        
+        <TextBox x:Name="HourTextBox" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="23" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" MaxLines="1" MaxLength="3" GotFocus="HourTextBox_GotFocus"/>
+        <TextBox x:Name="MinTextBox" HorizontalAlignment="Left" Height="23" Margin="38,10,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="23" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="2" MaxLines="1" GotFocus="MinTextBox_GotFocus"/>
+        <TextBox x:Name="SecTextBox" HorizontalAlignment="Left" Height="23" Margin="66,10,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="23" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="2" MaxLines="1" GotFocus="SecTextBox_GotFocus"/>
+        <Button x:Name="BeginButton" Content="Begin" HorizontalAlignment="Left" Margin="10,38,0,0" Width="79" Height="23" VerticalAlignment="Top" IsDefault="True" Click="BeginButton_Click" IsTabStop="False" ToolTip="Schedules a shutdown event for the given time"/>
+        <ComboBox x:Name="TypeComboBox" HorizontalAlignment="Left" Margin="94,10,0,0" VerticalAlignment="Top" Width="90" Height="23" SelectedIndex="0" IsTabStop="False">
+            <ComboBoxItem Content="Shutdown"/>
+            <ComboBoxItem Content="Restart"/>
+        </ComboBox>
+        <Button x:Name="AbortButton" Content="Abort" HorizontalAlignment="Left" Margin="94,38,0,0" VerticalAlignment="Top" Width="90" Height="23" ToolTip="Cancels the currently scheduled shutdown event" Click="AbortButton_Click" IsTabStop="False"/>
     </Grid>
 </Window>
