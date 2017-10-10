@@ -35,6 +35,10 @@ namespace ezShutdown
                     type_C = 'r';
                     type_S = "Restart";
                     break;
+                case 2:
+                    type_C = 'l';
+                    type_S = "Logoff";
+                    break;
             }
 
             MessageBoxResult result = MessageBox.Show(

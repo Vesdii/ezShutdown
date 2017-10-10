@@ -1,0 +1,4 @@
+C:\Users\W7285227\Source\Repos\ezshutdown\src\ezShutdown\obj\Debug\MainWindow.g.cs
+C:\Users\W7285227\Source\Repos\ezshutdown\src\ezShutdown\obj\Debug\App.g.cs
+C:\Users\W7285227\Source\Repos\ezshutdown\src\ezShutdown\obj\Debug\ezShutdown_MarkupCompile.cache
+C:\Users\W7285227\Source\Repos\ezshutdown\src\ezShutdown\obj\Debug\ezShutdown_MarkupCompile.lref

@@ -14,6 +14,7 @@
         <ComboBox x:Name="TypeComboBox" HorizontalAlignment="Left" Margin="94,10,0,0" VerticalAlignment="Top" Width="90" Height="23" SelectedIndex="0" IsTabStop="False">
             <ComboBoxItem Content="Shutdown"/>
             <ComboBoxItem Content="Restart"/>
+            <ComboBoxItem Content="Logoff"/>
         </ComboBox>
         <Button x:Name="AbortButton" Content="Abort" HorizontalAlignment="Left" Margin="94,38,0,0" VerticalAlignment="Top" Width="90" Height="23" ToolTip="Cancels the currently scheduled shutdown event" Click="AbortButton_Click" IsTabStop="False"/>
     </Grid>
