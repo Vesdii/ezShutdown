@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7FEC09C5-B723-46A3-8F22-52DE37D34EB2}</ProjectGuid>
+    <ProjectGuid>{037024B7-5D24-4C13-A4A5-F7CE42F63D87}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>ezShutdown</RootNamespace>
     <AssemblyName>ezShutdown</AssemblyName>

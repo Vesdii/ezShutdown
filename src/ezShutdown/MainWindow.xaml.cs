@@ -14,61 +14,63 @@ namespace ezShutdown
             InitializeComponent();
         }
 
-        private void BeginButton_Click(object sender, RoutedEventArgs e)
+        private void HighlightText(object sender, RoutedEventArgs e)
         {
-            if (HourTextBox.Text.Length == 0
-                || !Byte.TryParse(HourTextBox.Text, out byte h)
+            if (HourTextBox.IsFocused)
+            { HourTextBox.SelectAll(); }
+
+            else if (MinTextBox.IsFocused)
+            { MinTextBox.SelectAll(); }
+
+            else if (SecTextBox.IsFocused)
+            { SecTextBox.SelectAll(); }
+        }
+
+        private void ScheduleButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Byte.TryParse(HourTextBox.Text, out byte h)
                 || !Byte.TryParse(MinTextBox.Text, out byte m)
                 || !Byte.TryParse(SecTextBox.Text, out byte s))
             { return; }
+            
+            int time = (h * 3600) + (m * 60) + s;
 
-            byte hour = Convert.ToByte(HourTextBox.Text);
-            byte min = Convert.ToByte(MinTextBox.Text);
-            byte sec = Convert.ToByte(SecTextBox.Text);
-            int time = (hour * 3600) + (min * 60) + sec;
-
-            char type_C = 's';
-            string type_S = "Shutdown";
+            char type_Char = 's';
+            string type_String = "Shutdown";
             switch (TypeComboBox.SelectedIndex)
             {
                 case 1:
-                    type_C = 'r';
-                    type_S = "Restart";
+                    type_Char = 'r';
+                    type_String = "Restart";
                     break;
                 case 2:
-                    type_C = 'l';
-                    type_S = "Logoff";
+                    type_Char = 'l';
+                    type_String = "Logoff";
                     break;
             }
 
+            string confirmPrompt = type_String + " in:  ";
+            if (time == 0)
+            { confirmPrompt = type_String + " immediately"; }
+            else
+            {
+                if (h != 0)
+                { confirmPrompt += h + "h "; }
+                if (m != 0)
+                { confirmPrompt += m + "m "; }
+                if (s != 0)
+                { confirmPrompt += s + "s"; }
+            }
             MessageBoxResult result = MessageBox.Show(
-                String.Format("{0} in:  {1}h {2}m {3}s", type_S, hour, min, sec),
-                "Confirm", MessageBoxButton.OKCancel
-                );
+                confirmPrompt,
+                "Confirm", MessageBoxButton.OKCancel);
             if (result == MessageBoxResult.Cancel)
             { return; }
 
-            Process.Start("shutdown.exe", "-" + type_C + " -t " + time);
+            Process.Start("shutdown.exe", "-" + type_Char + " -t " + time);
         }
 
         private void AbortButton_Click(object sender, RoutedEventArgs e)
-        {
-            Process.Start("shutdown.exe", "-a");
-        }
-
-        private void HourTextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            HourTextBox.SelectAll();
-        }
-
-        private void MinTextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            MinTextBox.SelectAll();
-        }
-
-        private void SecTextBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            SecTextBox.SelectAll();
-        }
+        { Process.Start("shutdown.exe", "-a"); }
     }
 }
