@@ -16,7 +16,6 @@ C:\Users\Vesdii\Desktop\ezShutdown\ezShutdown\obj\Debug\ezShutdown.pdb
 C:\Users\Vesdii\Source\Repos\ezshutdown\src\ezShutdown\bin\Debug\ezShutdown.exe.config
 C:\Users\Vesdii\Source\Repos\ezshutdown\src\ezShutdown\bin\Debug\ezShutdown.exe
 C:\Users\Vesdii\Source\Repos\ezshutdown\src\ezShutdown\bin\Debug\ezShutdown.pdb
-C:\Users\Vesdii\Source\Repos\ezshutdown\src\ezShutdown\obj\Debug\ezShutdown.csprojResolveAssemblyReference.cache
 C:\Users\Vesdii\Source\Repos\ezshutdown\src\ezShutdown\obj\Debug\MainWindow.g.cs
 C:\Users\Vesdii\Source\Repos\ezshutdown\src\ezShutdown\obj\Debug\App.g.cs
 C:\Users\Vesdii\Source\Repos\ezshutdown\src\ezShutdown\obj\Debug\ezShutdown_MarkupCompile.cache
