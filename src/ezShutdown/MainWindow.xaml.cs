@@ -24,10 +24,17 @@ namespace ezShutdown
 
         private void ScheduleButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!Byte.TryParse(HourTextBox.Text, out byte h)
-                || !Byte.TryParse(MinTextBox.Text, out byte m)
-                || !Byte.TryParse(SecTextBox.Text, out byte s))
-                return;
+            byte h = 0, m = 0, s = 0;
+
+            if (!String.IsNullOrEmpty(HourTextBox.Text)
+             || !String.IsNullOrEmpty(MinTextBox.Text)
+             || !String.IsNullOrEmpty(SecTextBox.Text))
+            {
+                if (!Byte.TryParse(HourTextBox.Text, out h)
+                 || !Byte.TryParse(MinTextBox.Text, out m)
+                 || !Byte.TryParse(SecTextBox.Text, out s))
+                    return;
+            }
             
             int time = (h * 3600) + (m * 60) + s;
             if (time == 0) return;
