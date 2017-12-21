@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ezShutdown"
         mc:Ignorable="d"
-        Title="EZS" Height="224" Width="216" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
+        Title="EZS" Height="224" Width="216" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown">
     <Grid>
         <TextBox x:Name="HourTextBox" HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="50" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="2" GotFocus="HighlightText" AllowDrop="False"/>
         <TextBox x:Name="MinTextBox" HorizontalAlignment="Left" Height="50" Margin="75,10,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="50" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="2" GotFocus="HighlightText" AllowDrop="False"/>

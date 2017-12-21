@@ -14,7 +14,7 @@ namespace ezShutdown
             InitializeComponent();
             HourTextBox.Focus();
         }
-
+        
         private void HighlightText(object sender, RoutedEventArgs e)
         {
             if (HourTextBox.IsFocused) HourTextBox.SelectAll();
@@ -24,17 +24,10 @@ namespace ezShutdown
 
         private void ScheduleButton_Click(object sender, RoutedEventArgs e)
         {
-            byte h = 0, m = 0, s = 0;
-
-            if (!String.IsNullOrEmpty(HourTextBox.Text)
-             || !String.IsNullOrEmpty(MinTextBox.Text)
-             || !String.IsNullOrEmpty(SecTextBox.Text))
-            {
-                if (!Byte.TryParse(HourTextBox.Text, out h)
-                 || !Byte.TryParse(MinTextBox.Text, out m)
-                 || !Byte.TryParse(SecTextBox.Text, out s))
+            if (!Byte.TryParse(HourTextBox.Text, out byte h)
+                || !Byte.TryParse(MinTextBox.Text, out byte m)
+                || !Byte.TryParse(SecTextBox.Text, out byte s))
                     return;
-            }
             
             int time = (h * 3600) + (m * 60) + s;
             if (time == 0) return;
@@ -72,6 +65,11 @@ namespace ezShutdown
         private void AbortButton_Click(object sender, RoutedEventArgs e)
         {
             Process.Start("shutdown.exe", "-a");
+        }
+
+        private void Window_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if (e.Key == System.Windows.Input.Key.Escape) Close();
         }
     }
 }
