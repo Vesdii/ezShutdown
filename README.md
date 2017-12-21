@@ -1,2 +1,2 @@
 # ezShutdown
-Simple shutdown scheduling GUI
+Simple shutdown scheduling program
