@@ -5,18 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ezShutdown"
         mc:Ignorable="d"
-        Title="EZS" Height="224" Width="216" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown">
+        Title="EZS" Height="224" Width="216" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown" Icon="sd.ico">
     <Grid>
-        <TextBox x:Name="HourTextBox" HorizontalAlignment="Left" Height="50" Margin="10,10,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="50" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="2" GotFocus="HighlightText" AllowDrop="False"/>
-        <TextBox x:Name="MinTextBox" HorizontalAlignment="Left" Height="50" Margin="75,10,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" Width="50" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="2" GotFocus="HighlightText" AllowDrop="False"/>
-        <TextBox x:Name="SecTextBox" Height="50" Margin="140,10,0,0" TextWrapping="Wrap" Text="00" VerticalAlignment="Top" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Width="50" MaxLength="2" GotFocus="HighlightText" AllowDrop="False"/>
-        <Label x:Name="HourLabel" Content="H" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Width="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Padding="0"/>
-        <Label x:Name="MinLabel" Content="M" HorizontalAlignment="Left" Margin="75,60,0,0" VerticalAlignment="Top" Width="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Padding="0"/>
-        <Label x:Name="SecLabel" Content="S" HorizontalAlignment="Left" Margin="140,60,0,0" VerticalAlignment="Top" Width="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Padding="0"/>
+        <TextBox x:Name="HourTextBox" HorizontalAlignment="Left" Height="50" Margin="35,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="2" GotFocus="HighlightText" AllowDrop="False"/>
+        <TextBox x:Name="MinTextBox" Height="50" Margin="115,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="36" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" MaxLength="2" GotFocus="HighlightText" AllowDrop="False" HorizontalAlignment="Left" Width="50"/>
+        <Label x:Name="HourLabel" Content="H" HorizontalAlignment="Left" Margin="35,60,0,0" VerticalAlignment="Top" Width="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Padding="0"/>
+        <Label x:Name="MinLabel" Content="M" HorizontalAlignment="Left" Margin="115,60,0,0" VerticalAlignment="Top" Width="50" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="16" Padding="0"/>
         <ComboBox x:Name="TypeComboBox" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" Width="180" Height="32" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectedIndex="0" FontSize="18" IsTabStop="False">
             <ComboBoxItem Content="Shutdown"/>
             <ComboBoxItem Content="Restart"/>
-            <ComboBoxItem Content="Logoff"/>
         </ComboBox>
         <Button x:Name="ScheduleButton" Content="Schedule" HorizontalAlignment="Left" Margin="10,133,0,0" Width="115" FontSize="18" Height="42" VerticalAlignment="Top" Click="ScheduleButton_Click" IsTabStop="False" IsDefault="True"/>
         <Button x:Name="AbortButton" Content="Abort" HorizontalAlignment="Left" Margin="130,133,0,0" Width="60" FontSize="18" Height="42" VerticalAlignment="Top" ToolTip="Cancel any currently scheduled shutdown event" Click="AbortButton_Click" IsTabStop="False"/>

@@ -19,17 +19,16 @@ namespace ezShutdown
         {
             if (HourTextBox.IsFocused) HourTextBox.SelectAll();
             else if (MinTextBox.IsFocused) MinTextBox.SelectAll();
-            else if (SecTextBox.IsFocused) SecTextBox.SelectAll();
+            //else if (SecTextBox.IsFocused) SecTextBox.SelectAll();
         }
 
         private void ScheduleButton_Click(object sender, RoutedEventArgs e)
         {
-            if (!Byte.TryParse(HourTextBox.Text, out byte h)
-                || !Byte.TryParse(MinTextBox.Text, out byte m)
-                || !Byte.TryParse(SecTextBox.Text, out byte s))
-                    return;
+            if (!Byte.TryParse(HourTextBox.Text, out byte h)) h = 0;
+            if (!Byte.TryParse(MinTextBox.Text, out byte m)) m = 0;
+            //if (!Byte.TryParse(SecTextBox.Text, out byte s)) s = 0;
             
-            int time = (h * 3600) + (m * 60) + s;
+            int time = (h * 3600) + (m * 60);
             if (time == 0) return;
 
             char type_Char = 's';
@@ -44,16 +43,12 @@ namespace ezShutdown
                     type_Char = 'r';
                     type_String = "Restart";
                     break;
-                case 2:
-                    type_Char = 'l';
-                    type_String = "Logoff";
-                    break;
             }
 
             string confirmPrompt = type_String + " in:  ";
             if (h != 0) confirmPrompt += h + "h ";
-            if (m != 0) confirmPrompt += m + "m ";
-            if (s != 0) confirmPrompt += s + "s";
+            if (m != 0) confirmPrompt += m + "m";
+            //if (s != 0) confirmPrompt += s + "s";
 
             MessageBoxResult result = MessageBox.Show(
                 confirmPrompt, "Confirm", MessageBoxButton.OKCancel);
