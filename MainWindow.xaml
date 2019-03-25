@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ezShutdown"
         mc:Ignorable="d"
         Title="EZS" Height="224" Width="216" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" KeyDown="Window_KeyDown" Icon="sd.ico">
     <Grid>
@@ -16,7 +15,6 @@
             <ComboBoxItem Content="Restart"/>
         </ComboBox>
         <Button x:Name="ScheduleButton" Content="Schedule" HorizontalAlignment="Left" Margin="10,133,0,0" Width="115" FontSize="18" Height="42" VerticalAlignment="Top" Click="ScheduleButton_Click" IsTabStop="False" IsDefault="True"/>
-        <Button x:Name="AbortButton" Content="Abort" HorizontalAlignment="Left" Margin="130,133,0,0" Width="60" FontSize="18" Height="42" VerticalAlignment="Top" ToolTip="Cancel any currently scheduled shutdown event" Click="AbortButton_Click" IsTabStop="False"/>
-
-    </Grid>
+		<Button x:Name="AbortButton" Content="Abort" HorizontalAlignment="Left" Margin="130,133,0,0" Width="60" FontSize="18" Height="42" VerticalAlignment="Top" ToolTip="Cancel any currently scheduled shutdown event" Click="AbortButton_Click" IsTabStop="False"/>
+	</Grid>
 </Window>
