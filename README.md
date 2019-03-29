@@ -1,2 +1,2 @@
 # ezShutdown
-Simple shutdown scheduling program
+Simple shutdown/restart scheduling program
